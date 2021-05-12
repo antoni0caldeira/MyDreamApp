@@ -16,4 +16,7 @@ ver as propriedades: {{ form.value | json }}
 
 two way databinding banana in a box : [(ngModel)]="userSettings.name"
 
+copying form data
+spread operador userSettings : UserSettings = { ...this.OriginalUserSettings};
+
 

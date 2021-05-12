@@ -19,4 +19,9 @@ two way databinding banana in a box : [(ngModel)]="userSettings.name"
 copying form data
 spread operador userSettings : UserSettings = { ...this.OriginalUserSettings};
 
+html validation attributes
+required
+pattern
+minlength maxlength min max
 
+ngNativeValidate for browser validation

@@ -14,4 +14,6 @@ ver as propriedades: {{ form | json }}
 adicionar ngModel
 ver as propriedades: {{ form.value | json }}
 
+two way databinding banana in a box : [(ngModel)]="userSettings.name"
+
 

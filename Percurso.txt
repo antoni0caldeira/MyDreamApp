@@ -4,3 +4,8 @@ Comandos para clonar o repo:
  commit: git commit -m "Add import BrowserModule"
  clone: git remote add origin https://github.com/antoni0caldeira/AngularForms.git
  push: git push -u origin master
+
+
+Instalar o bootstrap: npm install --save bootstrap
+adicionar o path a angular json: "node_modules/bootstrap/dist/css/bootstrap.min.css",
+

@@ -25,3 +25,9 @@ pattern
 minlength maxlength min max
 
 ngNativeValidate for browser validation
+
+
+CSS validation classes
+
+ng-untouched ng-touched
+ng-untouched

@@ -3,7 +3,7 @@
 <form #form="ngForm" ngNativeValidate>
     <div class="form-group">
         <label for="name">Name</label>
-    <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name" required pattern="B.*">
+    <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name" required #name>
     </div>
     
     <div class="form-check form-group" >
@@ -49,9 +49,11 @@
 
 </form>
 </div>
-Values<i class="mdi mdi-at:"></i>  {{ form.value | json }} <br>
-Submitted:  {{ form.submitted | json }} <br>
-Pristine: {{ form.pristine | json }} <br>
-Touched: {{ form.touched | json }} <br>
+Values: {{ form.value | json }} <br>
+Submitted:  {{ form.submitted }} <br>
+Pristine: {{ form.pristine }} Dirty: {{ form.dirty }}<br>
+Touched: {{ form.touched }} Untouched: {{ form.untouched | json }}<br>
+Valid: {{ form.valid }} Invalid: {{ form.invalid | json }}<br>
 userSettings: {{ userSettings | json }} <br>
 OriginalUserSettings: {{ originalUserSettings | json }} <br>
+Name input attributes: {{ name.className | json }}

@@ -1,0 +1,6 @@
+Comandos para clonar o repo:
+ inicializar no dir: git init
+ adicionar todos os files: git add .
+ commit: git commit -m "Add import BrowserModule"
+ clone: git remote add origin https://github.com/antoni0caldeira/AngularForms.git
+ push: git push -u origin master

@@ -9,3 +9,9 @@ Comandos para clonar o repo:
 Instalar o bootstrap: npm install --save bootstrap
 adicionar o path a angular json: "node_modules/bootstrap/dist/css/bootstrap.min.css",
 
+aceder à class ngform: adicionar #form="ngForm"
+ver as propriedades: {{ form | json }}
+adicionar ngModel
+ver as propriedades: {{ form.value | json }}
+
+

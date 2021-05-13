@@ -47,4 +47,14 @@ Styling forms with validation errors
 
 [hidden]="name.valid || name.untouched"
 
+Submitting forms
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+criar metodo
+  onSubmit(form: NgForm){
+
+    alert(`in on submit ${form.valid}`)
+
+  }
+
 

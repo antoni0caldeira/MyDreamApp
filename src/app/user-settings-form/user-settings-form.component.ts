@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { UserSettings } from './user-settings';
 
 @Component({
@@ -15,6 +16,12 @@ export class UserSettingsFormComponent implements OnInit {
     subscriptionType: null,
     notes: null
   };
+
+  onSubmit(form: NgForm){
+
+    alert(`in on submit: ${form.valid}`)
+
+  }
 
   userSettings : UserSettings = { ...this.originalUserSettings};
   constructor() { }

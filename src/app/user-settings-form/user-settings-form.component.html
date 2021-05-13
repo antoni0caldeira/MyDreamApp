@@ -1,9 +1,9 @@
 <div class="container">
     <h2>User Settings</h2>
-<form #form="ngForm" ngNativeValidate>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
         <label for="name">Name</label>
-    <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name" required #name="ngModel">
+    <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name" required #name="ngModel" >
     </div>
     <div [hidden]="name.valid || name.untouched" class="alert alert-danger">Please enter a name</div><br>
 
@@ -23,8 +23,11 @@
 
   <div class="form-group">
     <label for="name">Name2</label>
-<input id="name2" name="name2" class="form-control" [(ngModel)]="userSettings.name" required #name2="ngModel">
-</div><br>
+<input id="name2" name="name2" class="form-control" [(ngModel)]="userSettings.name" required #name2="ngModel" [class.field-error]="form.submitted && name2.invalid">
+</div>
+<div [hidden]="!form.submitted || name2.valid" class="alert alert-danger">Please enter a name</div><br>
+
+<br>
 
 
     <br>

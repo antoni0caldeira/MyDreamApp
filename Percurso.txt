@@ -52,9 +52,8 @@ Submitting forms
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
 criar metodo
   onSubmit(form: NgForm){
+    alert(`in on submit ${form.valid}`)  }
 
-    alert(`in on submit ${form.valid}`)
+Handling form control events
 
-  }
-
-
+blur adicionar (blur)="onBlur(name)" ao input

@@ -3,9 +3,31 @@
 <form #form="ngForm" ngNativeValidate>
     <div class="form-group">
         <label for="name">Name</label>
-    <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name" required #name>
-    </div>
+    <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name" required #name="ngModel">
+    </div><br>
+
+  
+
     
+  <h5> ngModel Validations </h5> <br>
+
+  <h6>  dirty {{ name.dirty }} </h6>
+  <h6>  pristine {{ name.pristine }} </h6>
+  <h6>  touched {{ name.touched }} </h6>
+  <h6>  untouched {{ name.untouched }} </h6>
+  <h6>  valid {{ name.valid }} </h6>
+  <h6>  invalid {{ name.invalid }} </h6><br><br>
+
+  <h3>Styling forms with validation errors</h3>
+
+  <div class="form-group">
+    <label for="name">Name2</label>
+<input id="name2" name="name2" class="form-control" [(ngModel)]="userSettings.name" required #name2="ngModel">
+</div><br>
+
+
+    <br>
+    <br>
     <div class="form-check form-group" >
         <input class="form-check-input" type="checkbox" id="emailOffers" name="emailOffers" [(ngModel)]="userSettings.emailOffers" >
         <label class="form-check-label" for="emailOffers">
@@ -56,4 +78,5 @@ Touched: {{ form.touched }} Untouched: {{ form.untouched | json }}<br>
 Valid: {{ form.valid }} Invalid: {{ form.invalid | json }}<br>
 userSettings: {{ userSettings | json }} <br>
 OriginalUserSettings: {{ originalUserSettings | json }} <br>
-Name input attributes: {{ name.className | json }}
+<!-- Name input attributes: {{ name.className | json }} -->
+

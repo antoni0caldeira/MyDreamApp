@@ -29,5 +29,20 @@ ngNativeValidate for browser validation
 
 CSS validation classes
 
+adicionar #name aos inputs
+
 ng-untouched ng-touched
-ng-untouched
+ng-pristine ng-dirty
+ng-valid ng-invalid
+
+ngModel Validations
+
+adicionar #name="ngModel" aos inputs
+
+untouched touched
+pristine dirty
+valid invalid
+
+Styling forms with validation errors
+
+

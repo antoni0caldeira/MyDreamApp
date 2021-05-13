@@ -78,7 +78,12 @@ passar funções ao observable com 2 resultados    this.dataService.postUserSett
 
 
 HTTP access using httpClient
-                                                          
+import HttpClientModule na app.module.ts
+no service injeta-se constructor(private http: HttpClient) { }
+de seguida no metodo passa-se o endereço e os dados     postUserSettingsForm(userSettings: UserSettings) : Observable<any>{
+                                                          return this.http.post('url', userSettings);
+
+
 
 
 

@@ -4,7 +4,8 @@
     <div class="form-group">
         <label for="name">Name</label>
     <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name" required #name="ngModel">
-    </div><br>
+    </div>
+    <div [hidden]="name.valid || name.untouched" class="alert alert-danger">Please enter a name</div><br>
 
   
 

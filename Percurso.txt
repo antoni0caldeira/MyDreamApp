@@ -45,4 +45,6 @@ valid invalid
 
 Styling forms with validation errors
 
+[hidden]="name.valid || name.untouched"
+
 

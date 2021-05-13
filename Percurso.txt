@@ -57,3 +57,30 @@ criar metodo
 Handling form control events
 
 blur adicionar (blur)="onBlur(name)" ao input
+
+
+chapter 7 HTTP Posting & Data Access
+
+Creating a data service: ng g s data
+criar metodo no data.service.this
+postUserSettingsForm(userSettings: UserSettings)
+
+Form post using observables
+
+adicionar um observable ao metodo no service postUserSettingsForm(userSettings: UserSettings) : Observable<UserSettings>
+                                                return of(userSettings);
+adicionar um observable ao metodo no component constructor(private dataService: DataService)
+adicionar o observable this.dataService.postUserSettingsForm(this.userSettings);
+subscrever o observable     this.dataService.postUserSettingsForm(this.userSettings).subscribe();
+passar funções ao observable com 2 resultados    this.dataService.postUserSettingsForm(this.userSettings).subscribe(
+                                                          success => console.log(`It works: `, success),
+                                                          error => console.log(`It doesn't work: ` ,error));
+
+
+HTTP access using httpClient
+                                                          
+
+
+
+
+

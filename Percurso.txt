@@ -113,7 +113,21 @@ no template do componente passar a mensagem
         <div [hidden]= "!postError"  class="alert alert-danger">{{ postErrorMessage }}</div>
 
 
+Submeter o form apenas se tiver sem errors
 
+onSubmit(form: NgForm){
+ 
+    if (form.valid){
+      this.dataService.postUserSettingsForm(this.userSettings).subscribe(
+      success => console.log(`It works: `, success),
+      error => this.onHttpError(error)
+    );
+    }
+    else {
+      this.postError = true;
+      this.postErrorMessage = 'Please fix the shit you have done';
+    }
+  }
 
 
 

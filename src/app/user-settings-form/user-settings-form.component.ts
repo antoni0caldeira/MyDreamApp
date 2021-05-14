@@ -32,11 +32,18 @@ export class UserSettingsFormComponent implements OnInit {
 
   onSubmit(form: NgForm){
     console.log(`in on submit: ${form.valid}`);
-    this.dataService.postUserSettingsForm(this.userSettings).subscribe(
+    if (form.valid){
+      this.dataService.postUserSettingsForm(this.userSettings).subscribe(
       success => console.log(`It works: `, success),
       error => this.onHttpError(error)
     );
+    }
+    else {
+      this.postError = true;
+      this.postErrorMessage = 'Please fix the shit you have done';
+    }
   }
+
   onBlur(field: NgModel){
     alert(`On blur: ${field.valid}`)
   }

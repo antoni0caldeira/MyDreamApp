@@ -129,7 +129,13 @@ onSubmit(form: NgForm){
     }
   }
 
+Retrieving data for select elements
 
+no template no selector select  <select class="form-control" id="subscriptionType" name="subscriptionType" [(ngModel)]="userSettings.subscriptionType">
+          <option *ngFor="let item of subscriptionTypes | async "> {{ item }} </option>        </select>
 
-
-
+no component definir um observable     subscriptionTypes: Observable<string[]>;
+              chamar o observable               ngOnInit(): void {
+                                                  this.subscriptionTypes = this.dataService.getSubscriptionTypes();}
+no service definir o metodo getSubscriptionTypes(): Observable<string[]>{
+                            return of(['Monthly', 'Annual', 'Lifetime']);}

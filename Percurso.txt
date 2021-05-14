@@ -89,7 +89,28 @@ var parsedBody = JSON.parse(request.body);
 parsedBody.id = '1';
 response.body = parsedBody;
 
+Handling POST errors
 
+criar uma função que lide com o erro na subscrição do observable
+  onSubmit(form: NgForm){
+    this.dataService.postUserSettingsForm(this.userSettings).subscribe(
+      success => console.log(`It works: `, success),
+      error => this.onHttpError(error)
+
+      criar a função no mesmo componente onde é chamado o observable
+
+      postError = false;
+  postErrorMessage = '';
+
+  onHttpError(errorResponse: any) {
+    console.log(`It doesn't work: ` ,errorResponse);
+    this.postError = true;
+    this.postErrorMessage = errorResponse.console.error.errorMessage;}
+
+no template do componente passar a mensagem
+
+<button class="btn btn-primary">Send</button>
+        <div [hidden]= "!postError"  class="alert alert-danger">{{ postErrorMessage }}</div>
 
 
 

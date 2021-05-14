@@ -18,12 +18,23 @@ export class UserSettingsFormComponent implements OnInit {
     notes: null
   };
   userSettings : UserSettings = { ...this.originalUserSettings};
+  postError = false;
+  postErrorMessage = '';
+ 
+
+  onHttpError(errorResponse: any) {
+    console.log(`It doesn't work: ` , errorResponse);
+    this.postError = true;
+    this.postErrorMessage = errorResponse.error.errorMessage;
+    alert(this.postErrorMessage);
+    
+  }
 
   onSubmit(form: NgForm){
     console.log(`in on submit: ${form.valid}`);
     this.dataService.postUserSettingsForm(this.userSettings).subscribe(
       success => console.log(`It works: `, success),
-      error => console.log(`It doesn't work: ` ,error)
+      error => this.onHttpError(error)
     );
   }
   onBlur(field: NgModel){

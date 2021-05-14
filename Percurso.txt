@@ -83,6 +83,15 @@ no service injeta-se constructor(private http: HttpClient) { }
 de seguida no metodo passa-se o endereço e os dados     postUserSettingsForm(userSettings: UserSettings) : Observable<any>{
                                                           return this.http.post('url', userSettings);
 
+Posting a form   on putsreq.com
+
+var parsedBody = JSON.parse(request.body);
+parsedBody.id = '1';
+response.body = parsedBody;
+
+
+
+
 
 
 
